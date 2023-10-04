@@ -1,11 +1,12 @@
-const saludar = (nombre) =>
+const bienvenida = (nombre) =>
 alert ("Bienvenido "+ nombre + " al simulador de plazos fijos");
 
-saludar( prompt("Ingresa tu nombre."));
+bienvenida( prompt("Ingresa tu nombre."));
 
 let valor = 0;
 let meses = 0;
 let otraOperacion = false;
+
 
 
 function calculadorInteres () {
@@ -14,9 +15,12 @@ function calculadorInteres () {
         meses= parseInt(prompt("Ingresa cantidad de meses a invertir; 6, 12, 18, 24"));
         intereses (0.1, 0.2, 0.3, 0.5);
         otraOperacion= confirm( "Deseas realizar otra operacion?");
+        
     } while (otraOperacion);
+    
 
 }
+const calculador = [ true, false, true, false]
 
 function intereses (seis, doce, dieciocho, veinticuatro) {
     let resultado = 0;
