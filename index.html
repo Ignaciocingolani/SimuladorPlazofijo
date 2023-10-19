@@ -3,12 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
     <title>Document</title>
 </head>
 <body>
     
 
+    <h1 id="titulo">Simulador de Plazos Fijos</h1>
+    
+    <form id="plazoFijoForm">
+        <label for="nombre">Nombre</label>
+        <input type="nombre" id="nombre" name="nombre" required>
+        <label for="monto">Monto a invertir:</label>
+        <input type="number" id="monto" name="monto" required>
+  
 
+        <label for="plazo">Plazo (en meses):</label>
+        <select id="plazo" name="plazo" required>
+            <option value="6">6 meses</option>
+            <option value="12">12 meses</option>
+            <option value="18">18 meses</option>
+            <option value="24">24 meses</option>
+        </select>
+   
+
+        <button type="submit">Calcular</button>
+    </form>
+
+    <div id="resultado">
+        
+    </div>
+
+    <script>
+        const plazoFijoForm = document.getElementById("plazoFijoForm");
+        const resultadoDiv = document.getElementById("resultado");
+
+        plazoFijoForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const monto = parseFloat(plazoFijoForm.elements.monto.value);
+            const plazo = parseInt(plazoFijoForm.elements.plazo.value);
+            const resultado = calcularIntereses(monto, plazo);
+
+            resultadoDiv.innerHTML = `Inversión de $${monto} a ${plazo} meses: Resultado = $${resultado.toFixed(2)}`;
+        });
+
+        function calcularIntereses(monto, meses) {
+            let resultado = 0;
+
+            switch (meses) {
+                case 6:
+                    resultado = (monto * 0.1) * 6;
+                    break;
+                case 12:
+                    resultado = (monto * 0.2) * 12;
+                    break;
+                case 18:
+                    resultado = (monto * 0.3) * 18;
+                    break;
+                case 24:
+                    resultado = (monto * 0.5) * 24;
+                    break;
+                default:
+                    resultado = "Por favor, ingrese 6, 12, 18 o 24 meses.";
+            }
+
+            return resultado;
+        }
+    </script>
 
 
     <script src="main.js"></script>
