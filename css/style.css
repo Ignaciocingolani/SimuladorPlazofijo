@@ -38,7 +38,7 @@ input, select {
 
 button {
     background-color: #962e84;
-    color: white;
+    color: black;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
@@ -75,4 +75,42 @@ button:hover {
         }
     
 
+        #historial {
+            margin-top: 20px;
+            background-color: #bc69e2;
+            border: 1px solid #050505;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        #historialLista {
+            list-style: none;
+            padding: 0;
+        }
+        
+        #historialLista li {
+            margin-bottom: 10px;
+            background-color: #f0f0f0; 
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        
+        .historial {
+            background-color: #a567cc; 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
 
+        #resetHistorialBtn {
+            background-color: #007BFF;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px; 
+        }
